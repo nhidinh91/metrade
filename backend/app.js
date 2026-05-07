@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
-import connectDB from "./configs/database.js";
+//import connectDB from "./configs/database.js";
 import jwtAuthenticate from "./middlewares/jwtAuthenticate.js";
 import authRoutes from "./routes/authRoutes.js";
 import tokenRoutes from "./routes/tokenRoutes.js"
@@ -26,7 +26,7 @@ const app = express();
 const swaggerSpec = JSON.parse(fs.readFileSync(path.resolve('./api-document/swagger.json'), 'utf-8'));
 
 // Connect to MongoDB
-connectDB();
+//connectDB();
 
 app.use(morgan("dev"));
 
