@@ -45,11 +45,11 @@ export const register = async (req, res) => {
 
         // send confirmation email
         // need to turn this off while testing auth.test.js but working with normal email
-        await sendConfirmationEmailService(
-          first_name,
-          email,
-          validation_token.value
-        );
+        // await sendConfirmationEmailService(
+        //   first_name,
+        //   email,
+        //   validation_token.value
+        // );
 
         const newUser = await User.create({
           first_name,
