@@ -238,6 +238,7 @@ export const login = async (req, res) => {
     res.cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
+      sameSite: "none",
       path: "/api/token/get-access-token",
       maxAge: convertTimeToMilliseconds(process.env.JWT_REFRESH_EXPIRES_IN),
     });
@@ -251,6 +252,7 @@ export const login = async (req, res) => {
     res.cookie("accessToken", newAccessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
+      sameSite: "none",
       path: "/api",
       maxAge: accessTokenMaxAge,
     });
